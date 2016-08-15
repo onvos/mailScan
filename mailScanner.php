@@ -18,7 +18,7 @@
 	}
 
 	// get the bad ips, customize the command and filter out your own modem office website and other a b c or d net ips
-	$command = '/usr/bin/cat /var/log/maillog | grep ": client=" | grep -v "187." | grep -v "189." | grep -v " 74.125." | grep -v "65.54." | grep -v "65.55." | grep -v "157.55." | grep -v 73.138.217.69 | grep -v "207.46.66." | grep -v "157.55." | grep -v NOQUEUE | egrep -o "[[:digit:]]{1,3}\.[[:digit:]]{1,3}\.[[:digit:]]{1,3}\.[[:digit:]]{1,3}" | uniq | sort ';
+	$command = '/usr/bin/cat /var/log/maillog | grep ": client=" | grep -v "187." | grep -v "189." | grep -v " 74.125." | grep -v "65.54." | grep -v "65.55." | grep -v "157.55." | grep -v 73.138.217.69 | grep -v "207.46.66." | grep -v "157.55." | grep -v 74.125. | grep -v NOQUEUE | egrep -o "[[:digit:]]{1,3}\.[[:digit:]]{1,3}\.[[:digit:]]{1,3}\.[[:digit:]]{1,3}" | uniq | sort ';
 	$code="";
 	$newips = shell_exec( $command );
 	$newList = explode( PHP_EOL,$newips );
