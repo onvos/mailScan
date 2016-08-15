@@ -18,7 +18,7 @@
 	}
 
 	// get the bad ips, customize the command and filter out your own modem office website and other a b c or d net ips
-	$command = '/usr/bin/cat /var/log/maillog | grep ": client=" | grep -v "187." | grep -v "189." | grep -v " 74.125." | grep -v "65.54." | grep -v "65.55." | grep -v "157.55." | grep -v 73.138.217.69 | grep -v "207.46.66." | grep -v "157.55." | grep -v 74.125. | grep -v NOQUEUE | egrep -o "[[:digit:]]{1,3}\.[[:digit:]]{1,3}\.[[:digit:]]{1,3}\.[[:digit:]]{1,3}" | uniq | sort ';
+	$command = '/usr/bin/cat /var/log/maillog | grep ": client=" | grep -v 108.177.8. | grep -v 157.55. | grep -v 172.217. | grep -v 173.194. | grep -v 187. | grep -v 189. | grep -v 207.126.144. | grep -v 207.46.66. | grep -v 209.85.128. | grep -v 216.239.32. | grep -v 216.58.192. | grep -v 64.18. | grep -v 64.233. | grep -v 65.54. | grep -v 65.55. | grep -v 66.102. | grep -v 66.249. | grep -v 72.14. | grep -v 73.138.217.69 | grep -v 74.125. | grep -v NOQUEUE | egrep -o "[[:digit:]]{1,3}\.[[:digit:]]{1,3}\.[[:digit:]]{1,3}\.[[:digit:]]{1,3}" | uniq | sort ';
 	$code="";
 	$newips = shell_exec( $command );
 	$newList = explode( PHP_EOL,$newips );
